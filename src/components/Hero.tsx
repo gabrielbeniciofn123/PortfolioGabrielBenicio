@@ -25,7 +25,7 @@ const Hero = () => {
             Gabriel Benicio
           </h1>
           <p className="text-2xl md:text-3xl mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-bold">
-            Desenvolvedor Web & Marketing Digital
+            Desenvolvedor Web
           </p>
           <p className="text-lg md:text-xl text-muted-foreground mb-2">
             Estudante de Ciência da Computação | PUC Minas

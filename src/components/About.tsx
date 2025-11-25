@@ -11,7 +11,7 @@ const About = () => {
     {
       icon: <Rocket className="w-8 h-8" />,
       title: "Marketing Digital",
-      description: "Gestão de tráfego pago, Meta Ads, Google Ads e crescimento no Instagram"
+      description: "Gestão de tráfego pago, Meta Ads, Google Ads e crescimento da sua empresa"
     },
     {
       icon: <Zap className="w-8 h-8" />,
