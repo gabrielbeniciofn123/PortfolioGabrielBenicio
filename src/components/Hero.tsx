@@ -22,13 +22,19 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h1 className="text-6xl md:text-8xl font-bold mb-6 text-glow">
-            Desenvolvedor
-            <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Full Stack
-            </span>
+            Gabriel Benicio
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Criando experiências digitais imersivas com tecnologia de ponta
+          <p className="text-2xl md:text-3xl mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-bold">
+            Desenvolvedor Web & Marketing Digital
+          </p>
+          <p className="text-lg md:text-xl text-muted-foreground mb-2">
+            Estudante de Ciência da Computação | PUC Minas
+          </p>
+          <p className="text-md text-muted-foreground mb-8">
+            📍 Belo Horizonte – MG
+          </p>
+          <p className="text-lg md:text-xl text-foreground/90 mb-8 max-w-2xl mx-auto">
+            Criando experiências digitais e estratégias de marketing que geram resultados reais
           </p>
           <div className="flex gap-4 justify-center">
             <Button 

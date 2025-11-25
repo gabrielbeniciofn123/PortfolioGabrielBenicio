@@ -4,15 +4,19 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend",
-      skills: ["HTML5", "CSS3", "JavaScript", "React", "Three.js", "TypeScript"]
+      skills: ["HTML5", "CSS3", "JavaScript", "Layout Responsivo", "Design Básico"]
     },
     {
-      title: "Backend",
-      skills: ["Node.js", "Express", "PostgreSQL", "MongoDB", "REST APIs"]
+      title: "Backend & Lógica",
+      skills: ["Linguagem C", "Java", "Algoritmos", "Estruturas de Dados", "Vetores e Matrizes", "Ponteiros"]
+    },
+    {
+      title: "Marketing & Tráfego",
+      skills: ["Meta Ads", "Google Ads", "Instagram", "Copywriting", "Gestão de Leads"]
     },
     {
       title: "Ferramentas",
-      skills: ["Git", "Docker", "Webpack", "Vite", "Figma", "VS Code"]
+      skills: ["Git & GitHub", "VS Code", "Suporte em TI", "Atendimento ao Público"]
     }
   ];
 
@@ -32,7 +36,7 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}

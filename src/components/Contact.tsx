@@ -92,38 +92,39 @@ const Contact = () => {
             <h3 className="text-2xl font-bold mb-6">Conecte-se</h3>
             <div className="space-y-4">
               <a 
-                href="mailto:contato@email.com"
+                href="mailto:gabriel.benicio@sga.pucminas.br"
                 className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="w-6 h-6" />
-                <span>contato@email.com</span>
+                <span>gabriel.benicio@sga.pucminas.br</span>
               </a>
               <a 
-                href="https://github.com"
+                href="https://github.com/gabrielbenicio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Github className="w-6 h-6" />
-                <span>github.com/seuusuario</span>
+                <span>github.com/gabrielbenicio</span>
               </a>
               <a 
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/gabriel-benicio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
-                <span>linkedin.com/in/seuperfil</span>
+                <span>linkedin.com/in/gabriel-benicio</span>
               </a>
             </div>
 
             <div className="mt-8 p-6 bg-card border border-border rounded-lg">
               <h4 className="font-bold mb-2">Disponível para:</h4>
               <ul className="space-y-2 text-muted-foreground">
+                <li>• Estágios em TI e Desenvolvimento</li>
                 <li>• Projetos freelance</li>
-                <li>• Consultorias técnicas</li>
-                <li>• Desenvolvimento full-time</li>
+                <li>• Desenvolvimento web</li>
+                <li>• Gestão de tráfego pago</li>
               </ul>
             </div>
           </motion.div>

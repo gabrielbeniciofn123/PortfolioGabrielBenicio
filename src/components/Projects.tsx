@@ -5,22 +5,32 @@ import { Button } from '@/components/ui/button';
 const Projects = () => {
   const projects = [
     {
-      title: "E-commerce 3D",
-      description: "Plataforma de e-commerce com visualização 3D de produtos",
-      tech: ["React", "Three.js", "Node.js", "MongoDB"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop"
+      title: "Content Company",
+      description: "Gestão completa de marketing digital com criação de site, campanhas pagas e gestão de redes sociais",
+      tech: ["HTML", "CSS", "JavaScript", "Meta Ads", "Google Ads", "Instagram"],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
+      details: "Criação e otimização de campanhas no Meta Ads e Google Ads, geração de leads e aumento de visibilidade"
     },
     {
-      title: "Dashboard Analytics",
-      description: "Dashboard interativo para análise de dados em tempo real",
-      tech: ["React", "D3.js", "Express", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop"
+      title: "Blaster & Nacif Sociedade de Advogadas",
+      description: "Site institucional profissional para escritório de advocacia com páginas dinâmicas e responsivas",
+      tech: ["HTML5", "CSS3", "JavaScript", "Design Responsivo"],
+      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&auto=format&fit=crop",
+      details: "Páginas dinâmicas, trajetória das sócias, contato integrado e versão mobile otimizada"
     },
     {
-      title: "App Mobile",
-      description: "Aplicativo mobile híbrido com sincronização em nuvem",
-      tech: ["React Native", "Firebase", "Redux"],
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop"
+      title: "Águas Residence",
+      description: "Landing page comercial para projeto imobiliário com integração WhatsApp",
+      tech: ["HTML", "CSS", "JavaScript", "WhatsApp API"],
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop",
+      details: "Landing page comercial com integração WhatsApp e conteúdos imobiliários otimizados"
+    },
+    {
+      title: "Gym Rats - Projeto Acadêmico",
+      description: "Site de academia desenvolvido na faculdade com estética esportiva e layout moderno",
+      tech: ["HTML5", "CSS3", "JavaScript", "Design"],
+      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&auto=format&fit=crop",
+      details: "Projeto da PUC Minas com layout estilizado e conteúdo informativo sobre fitness"
     }
   ];
 
@@ -40,7 +50,7 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}

@@ -5,18 +5,18 @@ const About = () => {
   const features = [
     {
       icon: <Code2 className="w-8 h-8" />,
-      title: "Código Limpo",
-      description: "Desenvolvimento com as melhores práticas e padrões de qualidade"
+      title: "Desenvolvimento Web",
+      description: "Criação de sites profissionais com HTML, CSS, JavaScript e foco em responsividade"
     },
     {
       icon: <Rocket className="w-8 h-8" />,
-      title: "Performance",
-      description: "Aplicações otimizadas para máxima velocidade e eficiência"
+      title: "Marketing Digital",
+      description: "Gestão de tráfego pago, Meta Ads, Google Ads e crescimento no Instagram"
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "Inovação",
-      description: "Sempre utilizando as tecnologias mais modernas do mercado"
+      title: "Atendimento & Suporte",
+      description: "Experiência em atendimento ao público e suporte em TI com foco em soluções"
     }
   ];
 
@@ -31,9 +31,19 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-4 text-glow">Sobre Mim</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Desenvolvedor apaixonado por criar experiências digitais únicas. 
-            Especializado em desenvolvimento full stack com foco em interfaces 3D interativas.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Sou estudante de Ciência da Computação e desenvolvedor em formação, com experiência prática 
+            em <strong className="text-primary">tráfego pago</strong>, <strong className="text-primary">criação de sites</strong>, 
+            <strong className="text-primary"> marketing digital</strong> e <strong className="text-primary">desenvolvimento web</strong>.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
+            Trabalho com <strong className="text-foreground">HTML, CSS, JavaScript, Java e C</strong>. 
+            Tenho experiência com Instagram, Meta Ads, Google Ads, criação de páginas profissionais 
+            para empresas, suporte em TI e atendimento ao público.
+          </p>
+          <p className="text-lg text-primary/90 max-w-2xl mx-auto mt-6 font-semibold">
+            Proativo, dedicado, responsável e apaixonado por tecnologia. Busco oportunidades em 
+            desenvolvimento, estágios e projetos freelance.
           </p>
         </motion.div>
 
