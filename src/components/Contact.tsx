@@ -92,29 +92,29 @@ const Contact = () => {
             <h3 className="text-2xl font-bold mb-6">Conecte-se</h3>
             <div className="space-y-4">
               <a 
-                href="mailto:gabriel.benicio@sga.pucminas.br"
+                href="mailto:gcontato.gabrielbenicio@gmail.com"
                 className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="w-6 h-6" />
-                <span>gabriel.benicio@sga.pucminas.br</span>
+                <span>contato.gabrielbenicio@gmail.com</span>
               </a>
               <a 
-                href="https://github.com/gabrielbenicio"
+                href="https://github.com/gabrielbeniciofn123"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Github className="w-6 h-6" />
-                <span>github.com/gabrielbenicio</span>
+                <span>https://github.com/gabrielbeniciofn123</span>
               </a>
               <a 
-                href="https://linkedin.com/in/gabriel-benicio"
+                href="https://github.com/gabrielbeniciofn123"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
-                <span>linkedin.com/in/gabriel-benicio</span>
+                <span>https://www.linkedin.com/in/gabriel-benicio-733928334/</span>
               </a>
             </div>
 
