@@ -1,73 +1,51 @@
-# Welcome to your Lovable project
+# 👋 Olá! Eu sou o Gabriel Benicio
 
-## Project info
+Estudante de **Ciência da Computação (PUC Minas)**, desenvolvedor em evolução constante e apaixonado por tecnologia, design moderno e criação de experiências digitais interativas.
 
-**URL**: https://lovable.dev/projects/a9449ce1-bc9a-4bc0-97c5-fef1f73b6717
+Atualmente trabalho com:
+- **Suporte TI** EMATERMG
+- **Desenvolvimento Web como freelancer** — HTML, CSS, JavaScript e Java  
+- **Lógica de Programação e Estruturas de Dados** — C, vetores, matrizes, ponteiros e problemas computacionais  
+- **Criação de Websites Profissionais** — Imobiliárias, advogados, empresas locais e sites institucionais  
 
-## How can I edit this code?
+Sou uma pessoa proativa, dedicada e sempre buscando aprender algo novo, unindo tecnologia e criatividade para transformar ideias em soluções reais e funcionais.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🚀 O que desenvolvo
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a9449ce1-bc9a-4bc0-97c5-fef1f73b6717) and start prompting.
+### 🔹 **Websites completos**
+- **Content Company**
+- **Sudeste Imóveis**
+- **Blaster & Nacif Advogados**
+- **Águas Residence**
+- **Catálogo de Filmes – Oásis Club**
+- **Gerador de Senhas Profissional**
+- **Sites institucionais e landing pages para clientes (Freelancer)**
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🔹 **Projetos acadêmicos**
+- **Gym Rats** — projeto gamificado de TI  
+- **Sistemas com JSON + JavaScript**  
+- **Estruturas de Dados em C e Java**  
+- **Algoritmos otimizados com análise de desempenho**
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📬 Entre em contato
+Se quiser trocar uma ideia, colaborar em projetos ou oferecer uma oportunidade:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- 📧 **Email:** contato.gabrielbenicio@gmail.com  
+- 💼 **LinkedIn:** https://www.linkedin.com/in/gabriel-benicio-733928334/
+- 🐙 **GitHub:** https://github.com/gabrielbeniciofn123
+- 📱 **WhatsApp:** 31999557416
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 💬 Curiosidade
+Gosto de transformar qualquer projeto — pequeno ou grande — em algo único, funcional e visualmente marcante.  
+Se pode ser diferente, melhor ainda. 😎
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/a9449ce1-bc9a-4bc0-97c5-fef1f73b6717) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+  Obrigado por visitar meu portfólio!
+Fique à vontade para ver meus repositórios e acompanhar minha evolução 🚀
