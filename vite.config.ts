@@ -3,12 +3,11 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// ⚠️ IMPORTANTE:
-// Substitua "my-3d-folio-showcase" pelo nome DO SEU repositório exato
+// ⚠️ O nome deve ser EXATAMENTE o nome do seu repositório
 const repoName = "PortfolioGabrielBenicio";
 
 export default defineConfig(({ mode }) => ({
-  base: `/${repoName}/`, // 👈 obrigatório para GitHub Pages
+  base: `/${repoName}/`, // 👈 OBRIGATÓRIO para GitHub Pages funcionar
 
   server: {
     host: "::",
