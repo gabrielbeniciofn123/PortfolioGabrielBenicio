@@ -26,11 +26,32 @@ const Projects = () => {
       details: "Landing page comercial com integração WhatsApp e conteúdos imobiliários otimizados"
     },
     {
+      title: "Suporte Técnico - Emater MG",
+      description: "Experiência profissional em suporte técnico e infraestrutura de TI",
+      tech: ["Suporte Técnico", "Infraestrutura", "Atendimento"],
+      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&auto=format&fit=crop",
+      details: "Suporte técnico, infraestrutura e atendimento ao público na Emater MG"
+    },
+    {
       title: "Gym Rats - Projeto Acadêmico",
       description: "Site de academia desenvolvido na faculdade com estética esportiva e layout moderno",
       tech: ["HTML5", "CSS3", "JavaScript", "Design"],
       image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&auto=format&fit=crop",
       details: "Projeto da PUC Minas com layout estilizado e conteúdo informativo sobre fitness"
+    },
+    {
+      title: "Segurança de Dados - Projeto TI",
+      description: "Projeto acadêmico sobre roubo de dados e segurança da informação",
+      tech: ["Segurança", "Java", "Pesquisa"],
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop",
+      details: "Página informativa sobre área de roubo de dados e práticas de segurança"
+    },
+    {
+      title: "Gerador de Senhas",
+      description: "Aplicação web para geração de senhas seguras com front-end estilizado",
+      tech: ["HTML5", "CSS3", "JavaScript", "JSON Server"],
+      image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&auto=format&fit=crop",
+      details: "Front-end estilizado com opções de segurança e integração com JSON Server"
     }
   ];
 
