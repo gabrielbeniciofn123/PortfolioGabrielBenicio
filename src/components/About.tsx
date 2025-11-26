@@ -1,22 +1,22 @@
 import { motion } from 'framer-motion';
-import { Code2, Rocket, Zap } from 'lucide-react';
+import { Code2, TrendingUp, Users } from 'lucide-react';
 
 const About = () => {
   const features = [
     {
       icon: <Code2 className="w-8 h-8" />,
       title: "Desenvolvimento Web",
-      description: "Criação de sites profissionais com HTML, CSS, JavaScript e foco em responsividade"
+      description: "Criação de sites modernos e responsivos com HTML, CSS e JavaScript"
     },
     {
-      icon: <Rocket className="w-8 h-8" />,
+      icon: <TrendingUp className="w-8 h-8" />,
       title: "Marketing Digital",
-      description: "Gestão de tráfego pago, Meta Ads, Google Ads e crescimento da sua empresa"
+      description: "Gestão de campanhas no Meta Ads e Google Ads, otimização de tráfego pago e Instagram"
     },
     {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Atendimento & Suporte",
-      description: "Experiência em atendimento ao público e suporte em TI com foco em soluções"
+      icon: <Users className="w-8 h-8" />,
+      title: "Suporte Técnico & Atendimento",
+      description: "Experiência em infraestrutura de TI, suporte técnico e atendimento ao público"
     }
   ];
 
@@ -32,18 +32,18 @@ const About = () => {
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-4 text-glow">Sobre Mim</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Sou estudante de Ciência da Computação e desenvolvedor em formação, com experiência prática 
-            em <strong className="text-primary">tráfego pago</strong>, <strong className="text-primary">criação de sites</strong>, 
-            <strong className="text-primary"> marketing digital</strong> e <strong className="text-primary">desenvolvimento web</strong>.
+            Sou estudante de Ciência da Computação na <strong className="text-primary">PUC Minas</strong> e desenvolvedor em formação, 
+            com experiência prática em <strong className="text-primary">tráfego pago</strong>, <strong className="text-primary">criação de sites</strong>, 
+            <strong className="text-primary"> marketing digital</strong>, <strong className="text-primary">desenvolvimento web</strong>, 
+            <strong className="text-primary">atendimento ao público</strong> e <strong className="text-primary">suporte técnico</strong>.
           </p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
-            Trabalho com <strong className="text-foreground">HTML, CSS, JavaScript, Java e C</strong>. 
-            Tenho experiência com Instagram, Meta Ads, Google Ads, criação de páginas profissionais 
-            para empresas, suporte em TI e atendimento ao público.
+            Trabalho com <strong className="text-foreground">HTML, CSS, Java, C e JavaScript</strong>. 
+            Tenho experiência com Instagram, Meta Ads, Google Ads e criação de páginas profissionais para empresas.
           </p>
           <p className="text-lg text-primary/90 max-w-2xl mx-auto mt-6 font-semibold">
-            Proativo, dedicado, responsável e apaixonado por tecnologia. Busco oportunidades em 
-            desenvolvimento, estágios e projetos freelance.
+            Perfil: Proativo, dedicado, responsável, comprometido e apaixonado por tecnologia. 
+            Objetivo: Conquistar oportunidades em TI / Desenvolvimento, estágio e projetos freelance.
           </p>
         </motion.div>
 
