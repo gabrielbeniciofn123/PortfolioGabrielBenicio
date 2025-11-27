@@ -4,19 +4,15 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend",
-      skills: ["HTML5", "CSS3", "JavaScript", "Layout Responsivo"]
+      skills: ["HTML5", "CSS3", "JavaScript", "React", "Layout Responsivo"]
     },
     {
       title: "Backend & Lógica",
-      skills: ["Linguagem C", "Java", "Algoritmos", "Estruturas de Dados", "Vetores e Matrizes", "Ponteiros"]
+      skills: ["Linguagem C", "Java", "Node.js", "SQL", "Azure Básico", "Algoritmos", "Estruturas de Dados"]
     },
     {
       title: "Marketing & Ferramentas",
-      skills: ["Meta Ads", "Google Ads", "Instagram", "Microsoft Azure", "Copywriting", "Design Básico"]
-    },
-    {
-      title: "Desenvolvimento",
-      skills: ["Git & GitHub", "VS Code", "Suporte em TI", "Atendimento ao Público"]
+      skills: ["Meta Ads", "Google Ads", "Instagram", "Git & GitHub", "VS Code", "Design Básico"]
     }
   ];
 
