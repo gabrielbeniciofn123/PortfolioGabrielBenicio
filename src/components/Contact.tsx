@@ -5,22 +5,52 @@ import { Textarea } from '@/components/ui/textarea';
 import { Mail, Github, Linkedin } from 'lucide-react';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
+
+// IMPORTANTE: Substitua pelos seus dados do EmailJS
+const EMAILJS_SERVICE_ID = 'SEU_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = 'SEU_TEMPLATE_ID';
+const EMAILJS_PUBLIC_KEY = 'SUA_PUBLIC_KEY';
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Mensagem enviada!",
-      description: "Obrigado pelo contato. Retornarei em breve!",
-    });
-    setFormData({ name: '', email: '', message: '' });
+    setIsLoading(true);
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      toast({
+        title: "Mensagem enviada!",
+        description: "Obrigado pelo contato. Retornarei em breve!",
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar",
+        description: "Tente novamente ou entre em contato por email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -76,8 +106,12 @@ const Contact = () => {
                   required
                 />
               </div>
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
-                Enviar Mensagem
+              <Button 
+                type="submit" 
+                className="w-full bg-primary hover:bg-primary/90"
+                disabled={isLoading}
+              >
+                {isLoading ? 'Enviando...' : 'Enviar Mensagem'}
               </Button>
             </form>
           </motion.div>
