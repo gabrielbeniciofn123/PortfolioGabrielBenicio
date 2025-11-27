@@ -7,10 +7,10 @@ import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import emailjs from '@emailjs/browser';
 
-// IMPORTANTE: Substitua o Template ID e Public Key pelos seus dados do EmailJS
+// EmailJS Configuration
 const EMAILJS_SERVICE_ID = 'service_zklk8tu';
-const EMAILJS_TEMPLATE_ID = 'SEU_TEMPLATE_ID'; // Preencha com seu Template ID
-const EMAILJS_PUBLIC_KEY = 'SUA_PUBLIC_KEY'; // Preencha com sua Public Key
+const EMAILJS_TEMPLATE_ID = 'template_aa7z5xn';
+const EMAILJS_PUBLIC_KEY = 'qibpwZokFstHKsNPG';
 
 const Contact = () => {
   const { toast } = useToast();
