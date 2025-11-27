@@ -9,49 +9,45 @@ const Projects = () => {
       description: "Gestão completa de marketing digital com criação de site, campanhas pagas e gestão de redes sociais",
       tech: ["HTML", "CSS", "JavaScript", "Meta Ads", "Google Ads", "Instagram"],
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
-      details: "Criação e otimização de campanhas no Meta Ads e Google Ads, geração de leads e aumento de visibilidade"
+      details: "Criação e otimização de campanhas no Meta Ads e Google Ads, geração de leads e aumento de visibilidade",
+      liveUrl: "https://contentcompanybr.com/",
+      githubUrl: null
     },
     {
       title: "Blaster & Nacif Sociedade de Advogadas",
       description: "Site institucional profissional para escritório de advocacia com páginas dinâmicas e responsivas",
       tech: ["HTML5", "CSS3", "JavaScript", "Design Responsivo"],
       image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&auto=format&fit=crop",
-      details: "Páginas dinâmicas, trajetória das sócias, contato integrado e versão mobile otimizada"
+      details: "Páginas dinâmicas, trajetória das sócias, contato integrado e versão mobile otimizada",
+      liveUrl: "https://www.blasterenacif.com.br/",
+      githubUrl: null
     },
     {
       title: "Águas Residence",
       description: "Landing page comercial para projeto imobiliário com integração WhatsApp",
       tech: ["HTML", "CSS", "JavaScript", "WhatsApp API"],
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop",
-      details: "Landing page comercial com integração WhatsApp e conteúdos imobiliários otimizados"
-    },
-    {
-      title: "Suporte Técnico - Emater MG",
-      description: "Experiência profissional em suporte técnico e infraestrutura de TI",
-      tech: ["Suporte Técnico", "Infraestrutura", "Atendimento"],
-      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&auto=format&fit=crop",
-      details: "Suporte técnico, infraestrutura e atendimento ao público na Emater MG"
+      details: "Landing page comercial com integração WhatsApp e conteúdos imobiliários otimizados",
+      liveUrl: "https://aguasresidence.com.br/",
+      githubUrl: null
     },
     {
       title: "Gym Rats - Projeto Acadêmico",
       description: "Site de academia desenvolvido na faculdade com estética esportiva e layout moderno",
       tech: ["HTML5", "CSS3", "JavaScript", "Design"],
       image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&auto=format&fit=crop",
-      details: "Projeto da PUC Minas com layout estilizado e conteúdo informativo sobre fitness"
+      details: "Projeto da PUC Minas com layout estilizado e conteúdo informativo sobre fitness",
+      liveUrl: null,
+      githubUrl: "https://github.com/gabrielbeniciofn123"
     },
     {
       title: "Segurança de Dados - Projeto TI",
       description: "Projeto acadêmico sobre roubo de dados e segurança da informação",
       tech: ["Segurança", "Java", "Pesquisa"],
       image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop",
-      details: "Página informativa sobre área de roubo de dados e práticas de segurança"
-    },
-    {
-      title: "Gerador de Senhas",
-      description: "Aplicação web para geração de senhas seguras com front-end estilizado",
-      tech: ["HTML5", "CSS3", "JavaScript", "JSON Server"],
-      image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&auto=format&fit=crop",
-      details: "Front-end estilizado com opções de segurança e integração com JSON Server"
+      details: "Página informativa sobre área de roubo de dados e práticas de segurança",
+      liveUrl: null,
+      githubUrl: "https://github.com/gabrielbeniciofn123/Roubo-de-dados"
     }
   ];
 
@@ -103,14 +99,37 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex gap-2">
-                  <Button size="sm" variant="outline" className="flex-1 border-primary/50 hover:bg-primary/10">
-                    <Github className="w-4 h-4 mr-2" />
-                    Código
-                  </Button>
-                  <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Ver Projeto
-                  </Button>
+                  {project.githubUrl && (
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="flex-1 border-primary/50 hover:bg-primary/10"
+                      asChild
+                    >
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-2" />
+                        Código
+                      </a>
+                    </Button>
+                  )}
+                  {project.liveUrl && (
+                    <Button 
+                      size="sm" 
+                      className="flex-1 bg-primary hover:bg-primary/90"
+                      asChild
+                    >
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Ver Projeto
+                      </a>
+                    </Button>
+                  )}
+                  {!project.liveUrl && !project.githubUrl && (
+                    <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90" disabled>
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Em breve
+                    </Button>
+                  )}
                 </div>
               </div>
             </motion.div>
