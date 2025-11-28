@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Code2, TrendingUp, Users } from 'lucide-react';
+import gabrielPhoto from '@/assets/gabriel-photo.png';
 
 const About = () => {
   const features = [
@@ -30,21 +31,51 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-4 text-glow">Sobre Mim</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Sou estudante de Ciência da Computação na <strong className="text-primary">PUC Minas</strong> e desenvolvedor em formação, 
-            com experiência prática em <strong className="text-primary">tráfego pago</strong>, <strong className="text-primary">criação de sites</strong>, 
-            <strong className="text-primary"> marketing digital</strong>, <strong className="text-primary">desenvolvimento web</strong>, 
-            <strong className="text-primary">atendimento ao público</strong> e <strong className="text-primary">suporte técnico</strong>.
-          </p>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
-            Trabalho com <strong className="text-foreground">HTML, CSS, Java, C e JavaScript</strong>. 
-            Tenho experiência com Instagram, Meta Ads, Google Ads e criação de páginas profissionais para empresas.
-          </p>
-          <p className="text-lg text-primary/90 max-w-2xl mx-auto mt-6 font-semibold">
-            Perfil: Proativo, dedicado, responsável, comprometido e apaixonado por tecnologia. 
-            Objetivo: Conquistar oportunidades em TI / Desenvolvimento, estágio e projetos freelance.
-          </p>
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 text-glow">Sobre Mim</h2>
+          
+          {/* Photo and Bio Section */}
+          <div className="flex flex-col lg:flex-row items-center gap-12 mb-12">
+            {/* Photo with neon effect */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative flex-shrink-0"
+            >
+              <div className="relative w-64 h-64 md:w-80 md:h-80">
+                {/* Neon glow effect */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-primary opacity-70 blur-xl animate-pulse" />
+                <div className="absolute inset-2 rounded-full bg-gradient-to-r from-primary to-secondary p-1">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-background">
+                    <img
+                      src={gabrielPhoto}
+                      alt="Gabriel Benicio - Desenvolvedor Web"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            
+            {/* Bio text */}
+            <div className="text-left max-w-2xl">
+              <p className="text-xl text-muted-foreground leading-relaxed mb-4">
+                Sou estudante de Ciência da Computação na <strong className="text-primary">PUC Minas</strong> e desenvolvedor em formação, 
+                com experiência prática em <strong className="text-primary">tráfego pago</strong>, <strong className="text-primary">criação de sites</strong>, 
+                <strong className="text-primary"> marketing digital</strong>, <strong className="text-primary">desenvolvimento web</strong>, 
+                <strong className="text-primary">atendimento ao público</strong> e <strong className="text-primary">suporte técnico</strong>.
+              </p>
+              <p className="text-lg text-muted-foreground mb-4">
+                Trabalho com <strong className="text-foreground">HTML, CSS, Java, C e JavaScript</strong>. 
+                Tenho experiência com Instagram, Meta Ads, Google Ads e criação de páginas profissionais para empresas.
+              </p>
+              <p className="text-lg text-primary/90 font-semibold">
+                Perfil: Proativo, dedicado, responsável, comprometido e apaixonado por tecnologia. 
+                Objetivo: Conquistar oportunidades em TI / Desenvolvimento, estágio e projetos freelance.
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
