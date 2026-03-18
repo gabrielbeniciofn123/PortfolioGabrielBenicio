@@ -1,16 +1,24 @@
+<!-- Arquivo HTML principal - ponto de entrada da aplicação -->
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Define o charset como UTF-8 para suportar caracteres especiais (acentos, etc) -->
     <meta charset="UTF-8" />
+    <!-- Configura o viewport para o site ser responsivo em dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Título da aba do navegador -->
     <title>Portfólio Gabriel Benicio</title>
+    <!-- Meta descrição para SEO - aparece nos resultados de busca do Google -->
     <meta name="description" content="Portfólio desenvolvido com React, Three.js e paixão por tecnologia" />
     <meta name="Gabriel" content="Developer Portfolio" />
 
+    <!-- Pré-conexão com Google Fonts para carregar fontes mais rápido -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Importação das fontes Orbitron (títulos) e Inter (texto) do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <!-- Meta tags Open Graph - controla como o site aparece quando compartilhado em redes sociais -->
     <meta property="og:title" content="Portfólio Gabriel Benicio" />
     <meta property="og:description" content="Portfólio desenvolvido com React, Three.js e paixão por tecnologia" />
     <meta property="og:type" content="website" />
@@ -18,7 +26,9 @@
   </head>
 
   <body>
+    <!-- Div raiz onde o React vai renderizar toda a aplicação -->
     <div id="root"></div>
+    <!-- Script principal que inicia a aplicação React -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

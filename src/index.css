@@ -1,106 +1,118 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Importação das camadas do Tailwind CSS */
+@tailwind base; /* Estilos base/reset do Tailwind */
+@tailwind components; /* Classes de componentes do Tailwind */
+@tailwind utilities; /* Classes utilitárias do Tailwind (flex, p-4, text-lg, etc) */
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ============================================
+   DESIGN SYSTEM - Sistema de Design do Portfólio
+   Todas as cores são em HSL para consistência.
+   Essas variáveis CSS são usadas pelo Tailwind
+   através do tailwind.config.ts
+   ============================================ */
 
 @layer base {
   :root {
-    --background: 220 25% 5%;
-    --foreground: 180 100% 95%;
+    /* Cores principais do tema escuro */
+    --background: 220 25% 5%; /* Cor de fundo - azul muito escuro (quase preto) */
+    --foreground: 180 100% 95%; /* Cor do texto principal - ciano muito claro */
 
-    --card: 220 20% 8%;
-    --card-foreground: 180 100% 95%;
+    --card: 220 20% 8%; /* Fundo dos cards - um pouco mais claro que o background */
+    --card-foreground: 180 100% 95%; /* Texto dos cards */
 
-    --popover: 220 25% 6%;
-    --popover-foreground: 180 100% 95%;
+    --popover: 220 25% 6%; /* Fundo de popovers/dropdowns */
+    --popover-foreground: 180 100% 95%; /* Texto de popovers */
 
-    --primary: 180 100% 50%;
-    --primary-foreground: 220 25% 5%;
+    --primary: 180 100% 50%; /* Cor primária - CIANO BRILHANTE (cor de destaque principal) */
+    --primary-foreground: 220 25% 5%; /* Texto sobre fundo primário - escuro para contraste */
 
-    --secondary: 150 100% 45%;
-    --secondary-foreground: 220 25% 5%;
+    --secondary: 150 100% 45%; /* Cor secundária - VERDE BRILHANTE */
+    --secondary-foreground: 220 25% 5%; /* Texto sobre fundo secundário */
 
-    --muted: 220 15% 15%;
-    --muted-foreground: 180 10% 60%;
+    --muted: 220 15% 15%; /* Cor suave - para fundos de elementos menos importantes */
+    --muted-foreground: 180 10% 60%; /* Texto em elementos suaves - cinza médio */
 
-    --accent: 180 100% 60%;
-    --accent-foreground: 220 25% 5%;
+    --accent: 180 100% 60%; /* Cor de destaque - ciano mais claro */
+    --accent-foreground: 220 25% 5%; /* Texto sobre destaque */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 180 100% 95%;
+    --destructive: 0 84.2% 60.2%; /* Cor de erro/destruição - VERMELHO */
+    --destructive-foreground: 180 100% 95%; /* Texto sobre erro */
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 180 100% 50%;
+    --border: 220 15% 20%; /* Cor das bordas - cinza azulado escuro */
+    --input: 220 15% 20%; /* Cor de fundo dos inputs */
+    --ring: 180 100% 50%; /* Cor do anel de foco (outline ao clicar em elementos) */
 
-    --radius: 0.75rem;
+    --radius: 0.75rem; /* Raio padrão de bordas arredondadas (12px) */
     
-    /* Custom gradient tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50%), hsl(150 100% 45%));
-    --gradient-glow: radial-gradient(circle at center, hsl(180 100% 50% / 0.3), transparent);
+    /* Gradientes customizados */
+    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50%), hsl(150 100% 45%)); /* Gradiente ciano → verde */
+    --gradient-glow: radial-gradient(circle at center, hsl(180 100% 50% / 0.3), transparent); /* Brilho radial */
     
-    /* Custom shadows */
-    --shadow-glow: 0 0 40px hsl(180 100% 50% / 0.3);
-    --shadow-card: 0 10px 30px hsl(220 25% 5% / 0.5);
+    /* Sombras customizadas */
+    --shadow-glow: 0 0 40px hsl(180 100% 50% / 0.3); /* Sombra com brilho neon ciano */
+    --shadow-card: 0 10px 30px hsl(220 25% 5% / 0.5); /* Sombra suave para cards */
     
-    /* Animation timing */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Timing de animações */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave com easing */
 
+    /* Variáveis do Sidebar (componente de barra lateral do shadcn/ui) */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  /* Tema escuro - mesmas cores (o site já é escuro por padrão) */
   .dark {
     --background: 220 25% 5%;
     --foreground: 180 100% 95%;
   }
 }
 
+/* ============================================
+   CLASSES UTILITÁRIAS CUSTOMIZADAS
+   ============================================ */
 @layer utilities {
+  /* Efeito de brilho neon no texto */
   .text-glow {
     text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
   }
   
+  /* Efeito de brilho ao passar o mouse (hover) */
   .hover-glow {
     transition: var(--transition-smooth);
   }
   
   .hover-glow:hover {
-    box-shadow: var(--shadow-glow);
-    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow); /* Adiciona sombra neon */
+    transform: translateY(-2px); /* Levanta o elemento 2px */
   }
 }
 
+/* ============================================
+   ESTILOS BASE GLOBAIS
+   ============================================ */
 @layer base {
+  /* Aplica a cor de borda padrão em todos os elementos */
   * {
     @apply border-border;
   }
 
+  /* Estilos do body - fundo escuro, texto claro, sem scroll horizontal */
   body {
     @apply bg-background text-foreground font-sans;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Esconde scroll horizontal para evitar problemas com animações */
   }
   
+  /* Todos os títulos usam a fonte display (Orbitron) */
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
   }
   
+  /* Habilita scroll suave em toda a página */
   html {
     scroll-behavior: smooth;
   }
