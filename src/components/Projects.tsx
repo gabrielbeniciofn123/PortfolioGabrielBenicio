@@ -1,17 +1,21 @@
-import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+// Componente Projects - Seção de projetos do portfólio
+// Exibe cards com imagem, descrição, tecnologias usadas e links para cada projeto
+
+import { motion } from 'framer-motion'; // Biblioteca de animações
+import { ExternalLink, Github } from 'lucide-react'; // Ícones dos botões
+import { Button } from '@/components/ui/button'; // Componente de botão estilizado
 
 const Projects = () => {
+  // Array com todos os projetos - cada objeto contém as informações de um projeto
   const projects = [
     {
       title: "Content Company",
       description: "Gestão completa de marketing digital com criação de site, campanhas pagas e gestão de redes sociais",
-      tech: ["HTML", "CSS", "JavaScript", "Meta Ads", "Google Ads", "Instagram"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
+      tech: ["HTML", "CSS", "JavaScript", "Meta Ads", "Google Ads", "Instagram"], // Tecnologias usadas
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop", // Imagem de capa
       details: "Criação e otimização de campanhas no Meta Ads e Google Ads, geração de leads e aumento de visibilidade",
-      liveUrl: "https://contentcompanybr.com/",
-      githubUrl: null
+      liveUrl: "https://contentcompanybr.com/", // Link do site ao vivo
+      githubUrl: null // Sem repositório público
     },
     {
       title: "Blaster & Nacif Sociedade de Advogadas",
@@ -54,6 +58,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
+        {/* Título da seção com animação */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,8 +72,10 @@ const Projects = () => {
           </p>
         </motion.div>
 
+        {/* Grid com 2 colunas (em desktop) para os cards de projetos */}
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
+            // Card do projeto com animação de fade-in sequencial
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -77,17 +84,21 @@ const Projects = () => {
               viewport={{ once: true }}
               className="bg-card border border-border rounded-lg overflow-hidden hover-glow group"
             >
+              {/* Imagem de capa do projeto com efeito de zoom ao passar o mouse */}
               <div className="relative h-48 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                {/* Gradiente escuro sobre a imagem para melhorar contraste */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
               </div>
+              {/* Informações do projeto */}
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
                 <p className="text-muted-foreground mb-4">{project.description}</p>
+                {/* Tags das tecnologias usadas */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, techIndex) => (
                     <span 
@@ -98,13 +109,15 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+                {/* Botões de ação - GitHub e/ou Ver Projeto */}
                 <div className="flex gap-2">
+                  {/* Botão GitHub - aparece apenas se o projeto tem repositório */}
                   {project.githubUrl && (
                     <Button 
                       size="sm" 
                       variant="outline" 
                       className="flex-1 border-primary/50 hover:bg-primary/10"
-                      asChild
+                      asChild // Permite usar <a> como filho
                     >
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                         <Github className="w-4 h-4 mr-2" />
@@ -112,6 +125,7 @@ const Projects = () => {
                       </a>
                     </Button>
                   )}
+                  {/* Botão Ver Projeto - aparece apenas se tem URL do site */}
                   {project.liveUrl && (
                     <Button 
                       size="sm" 
@@ -124,6 +138,7 @@ const Projects = () => {
                       </a>
                     </Button>
                   )}
+                  {/* Botão desabilitado "Em breve" - quando não tem nenhum link */}
                   {!project.liveUrl && !project.githubUrl && (
                     <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90" disabled>
                       <ExternalLink className="w-4 h-4 mr-2" />
