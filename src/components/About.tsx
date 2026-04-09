@@ -11,7 +11,7 @@ const About = () => {
     {
       icon: <Code2 className="w-8 h-8" />,
       title: "Desenvolvimento Web",
-      description: "Criação de sites modernos e responsivos com HTML, CSS e JavaScript"
+      description: "Criação de sites modernos e responsivos com HTML, CSS e JavaScript, React, Typscriptm, MySQL "
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
