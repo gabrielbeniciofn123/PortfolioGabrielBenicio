@@ -12,7 +12,7 @@ Sou uma pessoa proativa, dedicada e sempre buscando aprender algo novo, unindo t
 
 ---
 
-## 🚀 O que desenvolvo
+##  O que desenvolvo
 
 ### 🔹 **Websites completos**
 - **Content Company**
@@ -23,7 +23,7 @@ Sou uma pessoa proativa, dedicada e sempre buscando aprender algo novo, unindo t
 - **Gerador de Senhas Profissional**
 - **Sites institucionais e landing pages para clientes (Freelancer)**
 
-### 🔹 **Projetos acadêmicos**
+### **Projetos acadêmicos**
 - **Gym Rats** — projeto gamificado de TI  
 - **Sistemas com JSON + JavaScript**  
 - **Estruturas de Dados em C e Java**  
@@ -31,21 +31,21 @@ Sou uma pessoa proativa, dedicada e sempre buscando aprender algo novo, unindo t
 
 ---
 
-## 📬 Entre em contato
+##  Entre em contato
 Se quiser trocar uma ideia, colaborar em projetos ou oferecer uma oportunidade:
 
-- 📧 **Email:** contato.gabrielbenicio@gmail.com  
-- 💼 **LinkedIn:** https://www.linkedin.com/in/gabriel-benicio-733928334/
-- 🐙 **GitHub:** https://github.com/gabrielbeniciofn123
-- 📱 **WhatsApp:** 31999557416
+- **Email:** contato.gabrielbenicio@gmail.com  
+-  **LinkedIn:** https://www.linkedin.com/in/gabriel-benicio-733928334/
+-  **GitHub:** https://github.com/gabrielbeniciofn123
+-  **WhatsApp:** 31999557416
 
 ---
 
-## 💬 Curiosidade
+##  Curiosidade
 Gosto de transformar qualquer projeto — pequeno ou grande — em algo único, funcional e visualmente marcante.  
-Se pode ser diferente, melhor ainda. 😎
+Se pode ser diferente, melhor ainda. 
 
 ---
 
   Obrigado por visitar meu portfólio!
-Fique à vontade para ver meus repositórios e acompanhar minha evolução 🚀
+Fique à vontade para ver meus repositórios e acompanhar minha evolução 
