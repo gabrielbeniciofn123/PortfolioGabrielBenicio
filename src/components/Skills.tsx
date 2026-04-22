@@ -7,16 +7,16 @@ const Skills = () => {
   // Array com as categorias de habilidades e suas respectivas tecnologias
   const skillCategories = [
     {
-      title: "Frontend",
-      skills: ["HTML5", "CSS3", "JavaScript", "React", "Layout Responsivo"]
+      title: "Linguagens",
+      skills: ["JavaScript", "TypeScript", "Java", "C", "C++", "SQL", "HTML5", "CSS3"]
     },
     {
-      title: "Backend & Lógica",
-      skills: ["Linguagem C", "Java", "Node.js", "SQL", "Azure Básico", "Algoritmos", "Estruturas de Dados"]
+      title: "Frameworks & Tecnologias",
+      skills: ["React", "Node.js", "Next.js"]
     },
     {
-      title: "Marketing & Ferramentas",
-      skills: ["Meta Ads", "Google Ads", "Instagram", "Git & GitHub", "VS Code", "Design Básico"]
+      title: "Ferramentas & Plataformas",
+      skills: ["Git & GitHub", "APIs REST", "Microsoft Azure", "Banco de Dados SQL", "Integração com IA"]
     }
   ];
 
