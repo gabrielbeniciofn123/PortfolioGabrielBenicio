@@ -68,18 +68,18 @@ const About = () => {
             {/* Texto da biografia */}
             <div className="text-left max-w-2xl">
               <p className="text-xl text-muted-foreground leading-relaxed mb-4">
-                Sou estudante de Ciência da Computação na <strong className="text-primary">PUC Minas</strong> e desenvolvedor em formação, 
-                com experiência prática em <strong className="text-primary">tráfego pago</strong>, <strong className="text-primary">criação de sites</strong>, 
-                <strong className="text-primary"> marketing digital</strong>, <strong className="text-primary">desenvolvimento web</strong>, 
-                <strong className="text-primary">atendimento ao público</strong> e <strong className="text-primary">suporte técnico</strong>.
+                Estudante de <strong className="text-primary">Ciência da Computação na PUC Minas</strong>, 
+                com foco em <strong className="text-primary">desenvolvimento de software</strong> e aplicações modernas. 
+                Possuo experiência prática em projetos <strong className="text-primary">Full Stack</strong>, atuando com 
+                front-end, back-end, <strong className="text-primary">APIs REST</strong>, banco de dados SQL e 
+                <strong className="text-primary"> Microsoft Azure</strong>.
               </p>
               <p className="text-lg text-muted-foreground mb-4">
-                Trabalho com <strong className="text-foreground">HTML, CSS, Java, C e JavaScript</strong>. 
-                Tenho experiência com Instagram, Meta Ads, Google Ads e criação de páginas profissionais para empresas.
+                Também atuo com <strong className="text-foreground">desenvolvimento web como freelancer</strong> e possuo 
+                vivência em <strong className="text-foreground">suporte técnico e infraestrutura de TI</strong>.
               </p>
               <p className="text-lg text-primary/90 font-semibold">
-                Perfil: Proativo, dedicado, responsável, comprometido e apaixonado por tecnologia. 
-                Objetivo: Conquistar oportunidades em TI / Desenvolvimento, estágio e projetos freelance.
+                Busco oportunidade de estágio para evoluir tecnicamente e contribuir com soluções reais em equipe de tecnologia.
               </p>
             </div>
           </div>
