@@ -51,7 +51,7 @@ const Skills = () => {
               className="bg-card border border-border rounded-lg p-8"
             >
               {/* Título da categoria com cor primária */}
-              <h3 className="text-2xl font-bold mb-6 text-primary">{category.title}</h3>
+              <h3 className="text-xl xl:text-2xl font-bold mb-6 text-primary">{category.title}</h3>
               {/* Lista de habilidades dentro da categoria */}
               <div className="space-y-3">
                 {category.skills.map((skill, skillIndex) => (

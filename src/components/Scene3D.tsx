@@ -2,12 +2,12 @@
 // Usa Three.js (via React Three Fiber) para renderizar uma esfera distorcida que segue o mouse
 
 import { Canvas, useFrame } from '@react-three/fiber'; // React Three Fiber - renderiza Three.js em React
-import { OrbitControls, Sphere, MeshDistortMaterial, Float } from '@react-three/drei'; // Helpers 3D prontos
-import { Suspense, useRef, useState } from 'react';
+import { Sphere, MeshDistortMaterial, Float } from '@react-three/drei'; // Helpers 3D prontos
+import { Suspense, useRef, useEffect, type RefObject } from 'react';
 import * as THREE from 'three'; // Biblioteca 3D principal
 
 // Componente da esfera animada que segue a posição do mouse
-const AnimatedSphere = ({ mousePosition }: { mousePosition: { x: number; y: number } }) => {
+const AnimatedSphere = ({ mousePosition }: { mousePosition: RefObject<{ x: number; y: number }> }) => {
   const meshRef = useRef<THREE.Mesh>(null); // Referência direta ao objeto 3D
   
   // useFrame: Executa a cada frame de renderização (~60x por segundo)
@@ -17,13 +17,13 @@ const AnimatedSphere = ({ mousePosition }: { mousePosition: { x: number; y: numb
       // Interpolação suave no eixo X - move gradualmente em direção ao mouse
       meshRef.current.position.x = THREE.MathUtils.lerp(
         meshRef.current.position.x, // Posição atual
-        mousePosition.x * 2, // Posição alvo (mouse * 2 para amplificar o movimento)
+        (mousePosition.current?.x ?? 0) * 2, // Posição alvo (mouse * 2 para amplificar o movimento)
         0.1 // Fator de suavização (0.1 = 10% do caminho por frame)
       );
       // Interpolação suave no eixo Y
       meshRef.current.position.y = THREE.MathUtils.lerp(
         meshRef.current.position.y,
-        mousePosition.y * 2,
+        (mousePosition.current?.y ?? 0) * 2,
         0.1
       );
     }
@@ -32,8 +32,8 @@ const AnimatedSphere = ({ mousePosition }: { mousePosition: { x: number; y: numb
   return (
     // Float: Adiciona animação de flutuação automática (sobe e desce)
     <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-      {/* Sphere: Esfera 3D com 100x200 segmentos (alta resolução) e escala 2.5x */}
-      <Sphere ref={meshRef} args={[1, 100, 200]} scale={2.5}>
+      {/* Sphere: Esfera 3D com 48x64 segmentos e escala 2.5x */}
+      <Sphere ref={meshRef} args={[1, 48, 64]} scale={2.5}>
         {/* MeshDistortMaterial: Material que distorce a forma da esfera continuamente */}
         <MeshDistortMaterial
           color="hsl(180, 100%, 50%)" // Cor ciano (mesma do --primary)
@@ -49,27 +49,25 @@ const AnimatedSphere = ({ mousePosition }: { mousePosition: { x: number; y: numb
 
 // Componente principal da cena 3D
 const Scene3D = () => {
-  // Estado que armazena a posição normalizada do mouse (-1 a 1)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const mousePosition = useRef({ x: 0, y: 0 });
 
-  // Função que captura o movimento do mouse e normaliza as coordenadas
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    const { clientX, clientY } = event;
-    const { innerWidth, innerHeight } = window;
-    
-    // Normaliza a posição do mouse para o intervalo de -1 a 1
-    // -1 = esquerda/baixo, 0 = centro, 1 = direita/cima
-    const x = (clientX / innerWidth) * 2 - 1;
-    const y = -(clientY / innerHeight) * 2 + 1; // Invertido porque Y em 3D é oposto ao do navegador
-    
-    setMousePosition({ x, y });
-  };
+  useEffect(() => {
+    const handlePointerMove = (event: PointerEvent) => {
+      if (event.pointerType !== 'mouse') return;
+      mousePosition.current = {
+        x: (event.clientX / window.innerWidth) * 2 - 1,
+        y: -(event.clientY / window.innerHeight) * 2 + 1,
+      };
+    };
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
+    return () => window.removeEventListener('pointermove', handlePointerMove);
+  }, []);
 
   return (
     // Container que ocupa todo o espaço disponível e captura eventos de mouse
-    <div className="w-full h-full" onMouseMove={handleMouseMove}>
+    <div className="w-full h-full" >
       {/* Canvas: Área de renderização 3D com câmera posicionada a 5 unidades de distância */}
-      <Canvas camera={{ position: [0, 0, 5] }}>
+      <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 5] }}>
         {/* Suspense: Mostra nada (null) enquanto os assets 3D carregam */}
         <Suspense fallback={null}>
           {/* Luz ambiente - ilumina todos os objetos igualmente */}
@@ -80,8 +78,6 @@ const Scene3D = () => {
           <pointLight position={[-10, -10, -10]} color="hsl(150, 100%, 45%)" intensity={1} />
           {/* Esfera animada que segue o mouse */}
           <AnimatedSphere mousePosition={mousePosition} />
-          {/* Controles de órbita - permite rotacionar a cena (zoom e pan desabilitados) */}
-          <OrbitControls enableZoom={false} enablePan={false} />
         </Suspense>
       </Canvas>
     </div>

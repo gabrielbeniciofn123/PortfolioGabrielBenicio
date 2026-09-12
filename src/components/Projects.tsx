@@ -89,6 +89,8 @@ const Projects = () => {
                 <img 
                   src={project.image} 
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {/* Gradiente escuro sobre a imagem para melhorar contraste */}
@@ -103,7 +105,7 @@ const Projects = () => {
                   {project.tech.map((tech, techIndex) => (
                     <span 
                       key={techIndex}
-                      className="text-xs px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full"
+                      className="text-sm px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full"
                     >
                       {tech}
                     </span>
@@ -121,7 +123,7 @@ const Projects = () => {
                     >
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                         <Github className="w-4 h-4 mr-2" />
-                        Código
+                        {project.githubUrl === "https://github.com/gabrielbeniciofn123" ? "Perfil no GitHub" : "Código"}
                       </a>
                     </Button>
                   )}

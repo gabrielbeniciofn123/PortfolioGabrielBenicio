@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner"; // Segundo sistema d
 import { TooltipProvider } from "@/components/ui/tooltip"; // Provedor de tooltips (dicas ao passar o mouse)
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"; // Gerenciamento de requisições/cache
 import { BrowserRouter, Routes, Route } from "react-router-dom"; // Sistema de rotas/navegação
+import { MotionConfig } from "framer-motion";
 import Index from "./pages/Index"; // Página principal do portfólio
 import NotFound from "./pages/NotFound"; // Página 404 (não encontrado)
 
@@ -13,6 +14,7 @@ const queryClient = new QueryClient();
 
 const App = () => (
   // QueryClientProvider: Disponibiliza o cache de dados para toda a aplicação
+  <MotionConfig reducedMotion="user">
   <QueryClientProvider client={queryClient}>
     {/* TooltipProvider: Permite usar tooltips em qualquer lugar da aplicação */}
     <TooltipProvider>
@@ -21,7 +23,7 @@ const App = () => (
       <Sonner />
       {/* BrowserRouter: Gerencia as rotas da aplicação */}
       {/* basename: Em produção usa "/PortfolioGabrielBenicio" para funcionar no GitHub Pages */}
-      <BrowserRouter basename={import.meta.env.MODE === "production" ? "/PortfolioGabrielBenicio" : "/"}>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           {/* Rota principal "/" - renderiza a página do portfólio */}
           <Route path="/" element={<Index />} />
@@ -31,6 +33,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
+  </MotionConfig>
 );
 
 export default App;

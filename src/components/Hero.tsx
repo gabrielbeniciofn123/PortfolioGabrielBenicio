@@ -2,18 +2,19 @@
 // Exibe o nome, título profissional, localização e botões de ação
 // Possui uma cena 3D animada como fundo
 
-import { motion } from 'framer-motion'; // Biblioteca de animações
-import Scene3D from './Scene3D'; // Componente da esfera 3D animada
+import { motion, useReducedMotion } from 'framer-motion'; // Biblioteca de animações
+import SceneBackground from './SceneBackground'; // Componente da esfera 3D animada
 import { Button } from '@/components/ui/button'; // Componente de botão estilizado
 import { ArrowDown } from 'lucide-react'; // Ícone de seta para baixo
 
 const Hero = () => {
+  const reducedMotion = useReducedMotion();
   return (
     // Seção com altura mínima da tela inteira, centralizada vertical e horizontalmente
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen py-28 flex items-center justify-center overflow-hidden">
       {/* Fundo 3D - renderiza a esfera animada atrás de tudo (z-0) */}
       <div className="absolute inset-0 z-0">
-        <Scene3D />
+        <SceneBackground />
       </div>
       
       {/* Camada de gradiente sobre o 3D - escurece a parte inferior para legibilidade */}
@@ -28,7 +29,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }} // 0.8s de duração, começa após 0.2s
         >
           {/* Nome com efeito de brilho (text-glow) */}
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 text-glow">
+          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-6 text-glow">
             Gabriel Benicio
           </h1>
           {/* Título profissional com gradiente de cor no texto */}
@@ -48,12 +49,12 @@ const Hero = () => {
             Criando experiências digitais e estratégias de marketing que geram resultados reais
           </p>
           {/* Botões de ação */}
-          <div className="flex gap-4 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center">
             {/* Botão "Ver Projetos" - rola até a seção de projetos */}
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground hover-glow"
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth' })}
             >
               Ver Projetos
             </Button>
@@ -62,7 +63,7 @@ const Hero = () => {
               size="lg" 
               variant="outline"
               className="border-primary text-foreground hover:bg-primary/10"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth' })}
             >
               Contato
             </Button>
@@ -73,7 +74,8 @@ const Hero = () => {
       {/* Indicador de scroll - seta animada que sobe e desce continuamente */}
       <motion.div
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
-        animate={{ y: [0, 10, 0] }} // Animação: sobe e desce 10px
+        aria-hidden="true"
+        animate={reducedMotion ? { y: 0 } : { y: [0, 10, 0] }} // Animação: sobe e desce 10px
         transition={{ duration: 2, repeat: Infinity }} // Repete infinitamente a cada 2s
       >
         <ArrowDown className="w-8 h-8 text-primary" />

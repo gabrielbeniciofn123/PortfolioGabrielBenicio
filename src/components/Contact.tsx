@@ -28,6 +28,16 @@ const Contact = () => {
   // Função executada ao enviar o formulário
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Previne o comportamento padrão do formulário (recarregar a página)
+    if (isLoading) return;
+    const values = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      message: formData.message.trim(),
+    };
+    if (!values.name || !values.email || !values.message) {
+      toast({ title: "Preencha todos os campos", description: "Digite seu nome, e-mail e mensagem.", variant: "destructive" });
+      return;
+    }
     setIsLoading(true); // Ativa o estado de carregamento
 
     try {
@@ -36,9 +46,10 @@ const Contact = () => {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          from_name: formData.name, // Nome do remetente
-          from_email: formData.email, // Email do remetente
-          message: formData.message, // Mensagem
+          from_name: values.name, // Nome do remetente
+          from_email: values.email, // Email do remetente
+          message: values.message,
+          reply_to: values.email, // Mensagem
         },
         EMAILJS_PUBLIC_KEY
       );
@@ -83,16 +94,18 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Coluna esquerda - Formulário de contato */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }} // Desliza da esquerda
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }} // Desliza da esquerda
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold mb-6">Envie uma mensagem</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4" aria-busy={isLoading}>
               {/* Campo de nome */}
               <div>
-                <Input 
+                <label htmlFor="contact-name" className="block text-sm font-medium mb-2">Nome</label>
+                <Input
+                  id="contact-name" name="name" autoComplete="name" maxLength={100} disabled={isLoading}
                   placeholder="Seu nome"
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
@@ -102,7 +115,9 @@ const Contact = () => {
               </div>
               {/* Campo de email */}
               <div>
-                <Input 
+                <label htmlFor="contact-email" className="block text-sm font-medium mb-2">E-mail</label>
+                <Input
+                  id="contact-email" name="email" autoComplete="email" maxLength={254} disabled={isLoading}
                   type="email"
                   placeholder="Seu email"
                   value={formData.email}
@@ -113,7 +128,9 @@ const Contact = () => {
               </div>
               {/* Campo de mensagem */}
               <div>
-                <Textarea 
+                <label htmlFor="contact-message" className="block text-sm font-medium mb-2">Mensagem</label>
+                <Textarea
+                  id="contact-message" name="message" maxLength={5000} disabled={isLoading}
                   placeholder="Sua mensagem"
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
@@ -134,8 +151,8 @@ const Contact = () => {
 
           {/* Coluna direita - Links de contato e disponibilidade */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }} // Desliza da direita
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }} // Desliza da direita
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="flex flex-col justify-center"
@@ -145,31 +162,31 @@ const Contact = () => {
             <div className="space-y-4">
               {/* Link de email */}
               <a 
-                href="mailto:gcontato.gabrielbenicio@gmail.com"
-                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                href="mailto:contato.gabrielbenicio@gmail.com"
+                className="flex min-w-0 items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
               >
-                <Mail className="w-6 h-6" />
-                <span>contato.gabrielbenicio@gmail.com</span>
+                <Mail className="w-6 h-6 shrink-0" />
+                <span className="min-w-0 break-all">contato.gabrielbenicio@gmail.com</span>
               </a>
               {/* Link do GitHub */}
               <a 
                 href="https://github.com/gabrielbeniciofn123"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                className="flex min-w-0 items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
               >
-                <Github className="w-6 h-6" />
-                <span>https://github.com/gabrielbeniciofn123</span>
+                <Github className="w-6 h-6 shrink-0" />
+                <span>GitHub · gabrielbeniciofn123</span>
               </a>
               {/* Link do LinkedIn */}
               <a 
-                href="https://github.com/gabrielbeniciofn123"
+                href="https://www.linkedin.com/in/gabriel-benicio-733928334/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                className="flex min-w-0 items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
               >
-                <Linkedin className="w-6 h-6" />
-                <span>https://www.linkedin.com/in/gabriel-benicio-733928334/</span>
+                <Linkedin className="w-6 h-6 shrink-0" />
+                <span>LinkedIn · Gabriel Benicio</span>
               </a>
             </div>
 

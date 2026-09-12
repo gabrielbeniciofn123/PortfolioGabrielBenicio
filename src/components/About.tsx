@@ -11,7 +11,7 @@ const About = () => {
     {
       icon: <Code2 className="w-8 h-8" />,
       title: "Desenvolvimento Web",
-      description: "Criação de sites modernos e responsivos com HTML, CSS e JavaScript, React, Typscriptm, MySQL "
+      description: "Criação de sites modernos e responsivos com HTML, CSS, JavaScript, React, TypeScript e MySQL."
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
@@ -57,6 +57,8 @@ const About = () => {
                   <div className="w-full h-full rounded-full overflow-hidden bg-background">
                     <img
                       src={gabrielPhoto}
+                      loading="lazy"
+                      decoding="async"
                       alt="Gabriel Benicio - Desenvolvedor Web"
                       className="w-full h-full object-cover object-top"
                     />
@@ -86,7 +88,7 @@ const About = () => {
         </motion.div>
 
         {/* Grid com 3 cards de áreas de atuação */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             // Cada card aparece com delay sequencial (0.2s entre cada)
             <motion.div
@@ -100,7 +102,7 @@ const About = () => {
               {/* Ícone da área */}
               <div className="text-primary mb-4">{feature.icon}</div>
               {/* Título da área */}
-              <h3 className="text-2xl font-bold mb-2">{feature.title}</h3>
+              <h3 className="text-xl lg:text-2xl font-bold mb-2">{feature.title}</h3>
               {/* Descrição da área */}
               <p className="text-muted-foreground">{feature.description}</p>
             </motion.div>
